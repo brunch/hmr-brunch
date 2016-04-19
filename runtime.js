@@ -4,6 +4,13 @@
   var globals = typeof window === 'undefined' ? global : window;
   if (typeof globals._hmr === 'function') return;
 
+  var lsKey = '___hmr:reload-reason___';
+
+  if (localStorage && localStorage.getItem(lsKey)) {
+    console.warn('[HMR] Reloaded due to:', localStorage.getItem(lsKey));
+    localStorage.removeItem(lsKey);
+  }
+
   /* helper functions */
 
   var not = function(fn) {
@@ -129,6 +136,7 @@
       } else if (node.acceptChildren) {
         return true;
       } else {
+        if (node.parents.length === 0) return false;
         var sortedPars = node.parents.sort();
         var sortedAccepts = node.acceptedBy.sort();
         var decliners = node.declinedBy;
@@ -234,7 +242,10 @@
         callback(updatedNodes);
       } else {
         var notAccepted = iterData.badNodes.map(function(node) { return node.file; });
-        console.warn("[HMR] Can't accept changes for: " + notAccepted.join(', ') + ". Reloading the page...");
+        var reason = "[HMR] Can't accept changes for: " + notAccepted.join(', ') + ". Reloading the page...";
+        if (localStorage) localStorage.setItem(lsKey, reason);
+        console.warn(reason);
+        window.location.reload();
         return;
       }
     }
