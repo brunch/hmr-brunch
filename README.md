@@ -8,6 +8,7 @@ Constraints:
 * requires brunch v`<unreleased>` and later
 * requires [`auto-reload-brunch`](https://github.com/brunch/auto-reload-brunch) v`<unreleased>` and later
 * provides the main HMR API (but not Management API)
+* works only if your JS compiles to a single file
 
 ### Usage
 
