@@ -12,11 +12,11 @@ Constraints:
 
 ### Usage
 
-Change your config:
+HMR is on by default if the plugin is installed. However, if you need to temporarily disable it, change your config:
 
 ```javascript
 exports.config = {
-  hot: true,
+  hot: false,
   // ...
 };
 ```

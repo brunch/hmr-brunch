@@ -15,10 +15,12 @@ const isIfModuleHot = (node) => isIf(node) && isModuleHot(node.test);
 
 class HotStripOptimizer {
   constructor(config) {
-    if (config.modules.definition !== 'commonjs' && config.hot) {
+    const isHot = typeof config.hot === 'boolean' ? config.hot : true;
+    if (config.modules.definition !== 'commonjs' && isHot) {
       throw new Error("hot module reloading only works with config.modules.definition = 'commonjs'");
     }
-    this.hot = config.hot;
+    this.hot = isHot;
+    config.hot = isHot;
     this.isProduction = config.env.indexOf('production') !== -1;
   }
 
