@@ -1,6 +1,6 @@
 {
   "name": "hmr-brunch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hot Module Replacement runtime for Brunch",
   "main": "index.js",
   "scripts": {
