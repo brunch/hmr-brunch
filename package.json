@@ -23,5 +23,8 @@
   "dependencies": {
     "esprima": "~2.7.2",
     "escodegen": "~1.8.0"
+  },
+  "peerDependencies": {
+    "auto-reload-brunch": "^2.7.0"
   }
 }
