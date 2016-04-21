@@ -4,11 +4,11 @@ Allows to use [Hot Module Replacement](https://webpack.github.io/docs/hot-module
 
 Constraints:
 
-* only works for JS files
-* requires brunch v`<unreleased>` and later
-* requires [`auto-reload-brunch`](https://github.com/brunch/auto-reload-brunch) v`<unreleased>` and later
-* provides the main HMR API (but not Management API)
-* works only if your JS compiles to a single file
+* Only works for JS files
+* Requires brunch v`<unreleased>` and later
+* Requires [`auto-reload-brunch`](https://github.com/brunch/auto-reload-brunch) v`<unreleased>` and later
+* Provides the main HMR API (but not Management API)
+* Works only if your JS compiles to a single file
 
 ### Usage
 
