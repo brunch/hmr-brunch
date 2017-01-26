@@ -15,7 +15,7 @@ Constraints:
 Change your config:
 
 ```javascript
-exports.config = {
+module.exports = {
   hot: true,
   // ...
 };
@@ -23,7 +23,7 @@ exports.config = {
 
 Then, just use the main HMR API:
 
-```javascript
+```js
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -39,4 +39,4 @@ if (module.hot) {
 }
 ```
 
-Note: in production env, `hmr-brunch` will strip all `if (module.hot) { ... }` conditionals.
+**Note:** in production environment, `hmr-brunch` will strip all `if (module.hot) { ... }` conditionals.
