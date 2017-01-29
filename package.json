@@ -4,7 +4,7 @@
   "description": "Hot Module Replacement runtime for Brunch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint *.js"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,17 @@
   },
   "homepage": "https://github.com/brunch/hmr-brunch#readme",
   "dependencies": {
-    "esprima": "~2.7.2",
-    "escodegen": "~1.8.0"
+    "escodegen": "~1.8.0",
+    "esprima": "~2.7.2"
   },
   "peerDependencies": {
     "auto-reload-brunch": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.14.1",
+    "eslint-config-brunch": "brunch/eslint-config-brunch"
+  },
+  "eslintConfig": {
+    "extends": "brunch"
   }
 }

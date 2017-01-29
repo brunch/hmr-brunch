@@ -11,7 +11,7 @@ const isModuleHot = node => {
   return node.type === 'MemberExpression' && isIdX(node.object, 'module') && isIdX(node.property, 'hot');
 };
 
-const isIfModuleHot = (node) => isIf(node) && isModuleHot(node.test);
+const isIfModuleHot = node => isIf(node) && isModuleHot(node.test);
 
 class HotStripOptimizer {
   constructor(config) {
@@ -32,7 +32,7 @@ class HotStripOptimizer {
     const findHot = () => {
       node = syntax.body.find(isIfModuleHot);
       return node;
-    }
+    };
     while (findHot()) {
       syntax.body.splice(syntax.body.indexOf(node), 1);
     }
@@ -41,8 +41,10 @@ class HotStripOptimizer {
     return Promise.resolve(processed);
   }
 
-  include() {
-    return this.hot && !this.isProduction ? [sysPath.join(__dirname, 'runtime.js')] : [];
+  get include() {
+    return this.hot && !this.isProduction ?
+      [sysPath.join(__dirname, 'runtime.js')] :
+      [];
   }
 }
 
