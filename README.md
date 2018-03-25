@@ -1,6 +1,6 @@
 # HMR runtime for [Brunch](http://brunch.io)
 
-Allows to use [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement.html) in your Brunch projects.
+Allows to use [Hot Module Replacement](https://webpack.js.org/guides/hot-module-replacement/) in your Brunch projects.
 
 Constraints:
 
